@@ -1,16 +1,11 @@
-import './App.css'
+import Timeline from './components/Timeline';
 
 function App() {
-
   return (
-    <>
-      <body>
-        <h1 class="text-3xl font-bold underline text-red-500">
-          Hello world!
-        </h1>
-      </body>
-    </>
-  )
+    <div>
+      <Timeline />
+    </div>
+  );
 }
 
-export default App
+export default App;
