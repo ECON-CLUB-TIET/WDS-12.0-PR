@@ -1,0 +1,192 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.sponsors-section {
+  background: #101010;
+  color: #f4eee8;
+  padding: 80px 8%;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* CLASSIFIED LABEL */
+.classified-tag {
+  display: inline-block;
+  color: #e33b3b;
+  border: 1px solid #e33b3b;
+  padding: 8px 18px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin-bottom: 35px;
+}
+
+/* MAIN HEADING */
+.sponsors-heading {
+  margin-bottom: 35px;
+}
+
+.operation-label,
+.section-number {
+  color: #e33b3b;
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.sponsors-heading h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(55px, 9vw, 100px);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin: 20px 0;
+}
+
+.sponsors-heading h1 span {
+  color: #d82929;
+}
+
+.sponsors-subtitle {
+  color: #aaa;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* RED DIVIDER */
+.red-divider {
+  width: 75px;
+  height: 4px;
+  background: #d82929;
+  margin: 35px auto 55px;
+}
+
+/* TITLE SPONSOR */
+.title-sponsor {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  background: #191919;
+  border: 1px solid #632020;
+  border-top: 4px solid #d82929;
+}
+
+.title-logo {
+  min-height: 180px;
+  margin: 25px 0;
+  background: #242424;
+  border: 1px dashed #8b3535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.title-sponsor h3 {
+  color: #d82929;
+  letter-spacing: 4px;
+  font-size: 22px;
+}
+
+/* PARTNERS SECTION */
+.partners-container {
+  max-width: 950px;
+  margin: 80px auto;
+}
+
+.partners-container h2 {
+  font-size: 42px;
+  letter-spacing: 4px;
+  margin: 15px 0 35px;
+  font-weight: 400;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.partner-card {
+  background: #1b1b1b;
+  padding: 25px;
+  border: 1px solid #383030;
+  transition: 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  border-color: #d82929;
+  box-shadow: 0 8px 25px #d8292920;
+}
+
+.partner-logo {
+  min-height: 110px;
+  background: #292525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+  border: 1px dashed #754040;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.partner-card p {
+  margin: 18px 0 8px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.partner-card span {
+  color: #d82929;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+/* CLOSING STATEMENT */
+.closing-statement {
+  border-top: 1px solid #482323;
+  padding-top: 30px;
+  margin-top: 50px;
+}
+
+.closing-statement p {
+  color: #d82929;
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.closing-statement span {
+  color: #777;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+  .sponsors-section {
+    padding: 55px 18px;
+  }
+
+  .sponsors-heading h1 {
+    font-size: 55px;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title-sponsor {
+    padding: 20px;
+  }
+
+  .partners-container h2 {
+    font-size: 32px;
+  }
+}
