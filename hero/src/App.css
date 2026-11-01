@@ -81,7 +81,7 @@
 .logo img {
     width: 170px;
     height: 170px;
-    /* object-fit: contain; */
+    object-fit: contain; 
 }
 /* Navigation links */
 
@@ -322,8 +322,8 @@
 
     .logo img
     {
-    width: 110px;
-    height: 55px;
+    width: 120px;
+    height: 120px;
     }
 
     .hamburger {
@@ -370,11 +370,13 @@
     /* Hero */
 
     .hero {
-        min-height: 100vh;
-        min-height: 100svh;
+        background-image:url("./assets/mobile-bg.png");
 
-        background-position: center center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
+
 
     .hero-content {
         padding: 90px 18px 125px;
