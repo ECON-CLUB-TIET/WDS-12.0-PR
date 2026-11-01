@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+.gallery-page {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    min-height: 100svh;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 112px 0 34px;
+    background: #050505;
+    color: #fff;
+}
+
+.gallery-page::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 42%, rgba(201, 35, 50, 0.10), transparent 55%);
+    content: "";
+}
+
+.gallery-intro {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto 34px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.gallery-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 7px;
+    color: #e32636;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.gallery-eyebrow span {
+    width: 25px;
+    height: 1px;
+    background: #e32636;
+}
+
+.gallery-intro h1 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(76px, 12vw, 150px);
+    font-weight: 400;
+    letter-spacing: 5px;
+    line-height: 0.88;
+}
+
+.gallery-subtitle {
+    margin-top: 12px;
+    color: #a5a5a5;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.gallery-marquee {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    padding: 16px 0 22px;
+}
+
+.gallery-track {
+    display: flex;
+    width: max-content;
+    animation: gallery-train-right 48s linear infinite;
+    will-change: transform;
+}
+
+.gallery-sequence {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: stretch;
+    gap: 16px;
+    padding-right: 16px;
+}
+
+.gallery-marquee:hover .gallery-track,
+.gallery-marquee:focus-within .gallery-track {
+    animation-play-state: paused;
+}
+
+.gallery-card {
+    display: flex;
+    width: clamp(230px, 25vw, 340px);
+    flex: 0 0 auto;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 9px;
+    background: #111;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+
+.gallery-card-image-wrap {
+    display: block;
+    height: clamp(250px, 30vw, 370px);
+    overflow: hidden;
+    background: #171717;
+}
+
+.gallery-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.82) contrast(1.04);
+    transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 650ms ease;
+}
+
+.gallery-card:hover img,
+.gallery-card:focus-visible img {
+    transform: scale(1.07);
+    filter: saturate(1.05) contrast(1.04);
+}
+
+.gallery-card:focus-visible {
+    outline: 2px solid #e32636;
+    outline-offset: 4px;
+}
+
+.gallery-card-caption {
+    display: flex;
+    min-height: 43px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 13px;
+    color: #eee;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.gallery-card-caption span:first-child { color: #e32636; }
+
+@keyframes gallery-train-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+.gallery-bottomline {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: min(91%, 1440px);
+    align-items: center;
+    gap: 18px;
+    margin: 18px auto 0;
+    color: #bdbdbd;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.gallery-bottomline-rule {
+    height: 1px;
+    flex: 1;
+    background: #c92332;
+    opacity: 0.8;
+}
+
+.gallery-bottomline b { color: #e32636; font-size: 13px; }
+
+.gallery-lightbox {
+    position: fixed;
+    z-index: 30;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 76px;
+    background: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-figure {
+    display: flex;
+    max-width: min(100%, 1100px);
+    max-height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.lightbox-figure img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
+    max-height: calc(100svh - 150px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.lightbox-figure figcaption {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 14px;
+    color: #eee;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.lightbox-figure figcaption span:first-child { color: #e32636; }
+
+.lightbox-close,
+.lightbox-nav {
+    position: absolute;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: rgba(15, 15, 15, 0.8);
+    color: white;
+    cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover { border-color: #e32636; background: #e32636; }
+.lightbox-close { top: 24px; right: 28px; font-size: 30px; line-height: 1; }
+.lightbox-nav { top: 50%; font-size: 34px; transform: translateY(-50%); }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+@media (max-width: 768px) {
+    .gallery-page { justify-content: flex-start; padding-top: 112px; padding-bottom: 24px; }
+    .gallery-intro { margin-bottom: 24px; }
+    .gallery-intro h1 { font-size: clamp(72px, 19vw, 112px); letter-spacing: 3px; }
+    .gallery-eyebrow { font-size: 9px; letter-spacing: 3px; }
+    .gallery-subtitle { font-size: 8px; letter-spacing: 3px; }
+    .gallery-track { animation-duration: 42s; }
+    .gallery-sequence { gap: 11px; padding-right: 11px; }
+    .gallery-card { width: min(72vw, 290px); }
+    .gallery-card-image-wrap { height: min(70vw, 330px); }
+    .gallery-bottomline { width: 90%; gap: 10px; font-size: 7px; letter-spacing: 1.3px; }
+    .gallery-lightbox { padding: 62px 18px 36px; }
+    .lightbox-figure img { max-height: calc(100svh - 145px); }
+    .lightbox-close { top: 12px; right: 14px; }
+    .lightbox-nav { top: auto; bottom: 14px; width: 40px; height: 40px; transform: none; }
+    .lightbox-prev { left: calc(50% - 48px); }
+    .lightbox-next { right: calc(50% - 48px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-track { animation: none; transform: none; }
+    .gallery-card img { transition: none; }
+}
