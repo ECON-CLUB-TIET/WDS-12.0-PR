@@ -1,16 +1,15 @@
-import './App.css'
+import './App.css';
+
+import Header from './components/Header';
+import Hero from './components/Hero';
 
 function App() {
-
-  return (
-    <>
-      <body>
-        <h1 class="text-3xl font-bold underline text-red-500">
-          Hello world!
-        </h1>
-      </body>
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <Hero />
+        </>
+    );
 }
 
-export default App
+export default App;
