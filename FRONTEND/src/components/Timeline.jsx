@@ -1,5 +1,5 @@
 import React from 'react';
-import heistBg from '../assets/heist-bg.jpg';
+import heistBg from '../assets/new-bg.jpg';
 
 const timelineEvents = [
   {
