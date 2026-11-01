@@ -12,7 +12,7 @@ function Header() {
     return (
         <header className="header">
 
-            <a href="#" className="logo" onClick={closeMenu}>
+            <a href="/" className="logo" onClick={closeMenu}>
                 <img src={wdsLogo} alt="Wolf of Dalal Street Logo" />
             </a>
 
@@ -28,9 +28,10 @@ function Header() {
             </button>
 
             <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
-                <a href="#" onClick={closeMenu}>HOME</a>
+                <a href="/" onClick={closeMenu}>HOME</a>
                 <a href="#register" onClick={closeMenu}>REGISTER</a>
                 <a href="#about" onClick={closeMenu}>ABOUT</a>
+                <a href="/gallery" onClick={closeMenu}>GALLERY</a>
                 <a href="#about" onClick={closeMenu}>CONTACT US</a>
             </nav>
 

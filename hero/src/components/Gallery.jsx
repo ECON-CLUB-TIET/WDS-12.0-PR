@@ -3,46 +3,31 @@ import "../Gallery.css";
 
 // Replace these image URLs with your event photographs whenever they are ready.
 const galleryPhotos = [
-    {
-        src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85",
-        alt: "Modern financial district skyscrapers",
-        caption: "THE CITY NEVER SLEEPS",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85",
-        alt: "City skyline glowing at night",
-        caption: "AFTER HOURS",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
-        alt: "Professional in a suit",
-        caption: "THE PEOPLE BEHIND THE PLAY",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85",
-        alt: "Financial charts on a computer screen",
-        caption: "READ THE MARKET",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85",
-        alt: "Team collaborating around a table",
-        caption: "BUILT ON COLLABORATION",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85",
-        alt: "Contemporary workspace",
-        caption: "THE WORK BEFORE THE WIN",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
-        alt: "People working together on a laptop",
-        caption: "IDEAS IN MOTION",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=85",
-        alt: "Team meeting in a bright room",
-        caption: "MOMENTS THAT MOVE US",
-    },
+    { src: "/gallery/IMG_0015.jpeg", alt: "Wolf of Dalal Street event photograph 1", caption: "THE EVENT BEGINS" },
+    { src: "/gallery/IMG_0016.jpeg", alt: "Wolf of Dalal Street event photograph 2", caption: "TEAM IN ACTION" },
+    { src: "/gallery/IMG_0017.jpeg", alt: "Wolf of Dalal Street event photograph 3", caption: "THE PEOPLE BEHIND WDS" },
+    { src: "/gallery/IMG_0018.jpeg", alt: "Wolf of Dalal Street event photograph 4", caption: "MARKET FLOOR MOMENTS" },
+    { src: "/gallery/IMG_0019.jpeg", alt: "Wolf of Dalal Street event photograph 5", caption: "FOCUS ON THE GAME" },
+    { src: "/gallery/IMG_0021.jpeg", alt: "Wolf of Dalal Street event photograph 6", caption: "IDEAS IN MOTION" },
+    { src: "/gallery/IMG_0022.jpeg", alt: "Wolf of Dalal Street event photograph 7", caption: "THE TEAM SPIRIT" },
+    { src: "/gallery/IMG_0023.jpeg", alt: "Wolf of Dalal Street event photograph 8", caption: "MAKING MOVES" },
+    { src: "/gallery/IMG_0024.jpeg", alt: "Wolf of Dalal Street event photograph 9", caption: "BUILT TOGETHER" },
+    { src: "/gallery/IMG_0025.jpeg", alt: "Wolf of Dalal Street event photograph 10", caption: "A ROOM FULL OF IDEAS" },
+    { src: "/gallery/IMG_0026.jpeg", alt: "Wolf of Dalal Street event photograph 11", caption: "COLLABORATION IN ACTION" },
+    { src: "/gallery/IMG_0027.jpeg", alt: "Wolf of Dalal Street event photograph 12", caption: "THE TRADING FLOOR" },
+    { src: "/gallery/IMG_0028.jpeg", alt: "Wolf of Dalal Street event photograph 13", caption: "STRATEGY AT WORK" },
+    { src: "/gallery/IMG_0029.jpeg", alt: "Wolf of Dalal Street event photograph 14", caption: "MOMENTS BETWEEN MOVES" },
+    { src: "/gallery/IMG_0030.jpeg", alt: "Wolf of Dalal Street event photograph 15", caption: "ON THE FLOOR" },
+    { src: "/gallery/IMG_0031.jpeg", alt: "Wolf of Dalal Street event photograph 16", caption: "THE WDS EXPERIENCE" },
+    { src: "/gallery/IMG_0032.jpeg", alt: "Wolf of Dalal Street event photograph 17", caption: "TEAMWORK IN MOTION" },
+    { src: "/gallery/IMG_0033.jpeg", alt: "Wolf of Dalal Street event photograph 18", caption: "THE PEOPLE OF WDS" },
+    { src: "/gallery/IMG_0034.jpeg", alt: "Wolf of Dalal Street event photograph 19", caption: "A MOMENT TO REMEMBER" },
+    { src: "/gallery/IMG_0035.jpeg", alt: "Wolf of Dalal Street event photograph 20", caption: "THE ENERGY OF WDS" },
+    { src: "/gallery/IMG_0036.jpeg", alt: "Wolf of Dalal Street event photograph 21", caption: "BEHIND THE SCENES" },
+    { src: "/gallery/IMG_0037.jpeg", alt: "Wolf of Dalal Street event photograph 22", caption: "THE EXECUTIVE TEAM" },
+    { src: "/gallery/IMG_0038.jpeg", alt: "Wolf of Dalal Street event photograph 23", caption: "A SHARED VISION" },
+    { src: "/gallery/IMG_0039.jpeg", alt: "Wolf of Dalal Street event photograph 24", caption: "THE WDS COMMUNITY" },
+    { src: "/gallery/IMG_0040.jpeg", alt: "Wolf of Dalal Street event photograph 25", caption: "MAKING MEMORIES" },
 ];
 
 function Gallery() {
