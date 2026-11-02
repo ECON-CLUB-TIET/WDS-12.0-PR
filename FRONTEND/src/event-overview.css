@@ -1,0 +1,488 @@
+/* =========================================================
+   WOLF OF DALAL STREET — EVENT OVERVIEW SECTION
+   Theme: Money Heist  |  Matches hero / gallery / contact
+   Everything is scoped under .wos-event so it won't clash
+   with the rest of the website's CSS.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.wos-event {
+  --red: #e5232f;
+  --red-dark: #8b0d14;
+  --red-glow: rgba(229, 35, 47, 0.35);
+  --bg: #0a0606;
+  --card: rgba(30, 14, 16, 0.85);
+  --text: #f4ecec;
+  --muted: #b9a9aa;
+  --green: #22c55e;
+
+  position: relative;
+  padding: 110px 6vw 120px;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(139, 13, 20, 0.35), transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(139, 13, 20, 0.25), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: 'Bebas Neue', sans-serif;
+  overflow: hidden;
+}
+
+/* faint vault-grid texture */
+.wos-event::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(229, 35, 47, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 35, 47, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  pointer-events: none;
+}
+
+.wos-event * { box-sizing: border-box; }
+.wos-event .container { position: relative; max-width: 1200px; margin: 0 auto; }
+
+/* ---------- Heading ---------- */
+.wos-event .eyebrow {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem; letter-spacing: 0.45em; color: var(--red);
+  text-transform: uppercase;
+}
+.wos-event .eyebrow::before,
+.wos-event .eyebrow::after { content: ""; width: 34px; height: 2px; background: var(--red); }
+
+.wos-event .title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.2rem, 8vw, 6rem);
+  line-height: 0.95; text-align: center; margin: 14px 0 0; letter-spacing: 0.02em;
+}
+.wos-event .title span { color: var(--red); }
+
+.wos-event .lead {
+  max-width: 760px; margin: 22px auto 0; text-align: center;
+  font-size: 1.12rem; line-height: 1.7; color: var(--muted); font-weight: 400;
+}
+.wos-event .lead strong { color: var(--text); font-weight: 400; }
+
+/* ---------- Ticker strip ---------- */
+.wos-event .ticker {
+  margin: 50px -6vw 0;
+  border-top: 1px solid rgba(229, 35, 47, 0.4);
+  border-bottom: 1px solid rgba(229, 35, 47, 0.4);
+  background: rgba(0, 0, 0, 0.55);
+  overflow: hidden; white-space: nowrap;
+}
+.wos-event .ticker-track {
+  display: inline-flex; gap: 48px; padding: 12px 0;
+  animation: wos-scroll 30s linear infinite;
+  font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem;
+}
+.wos-event .ticker-track span b { color: var(--text); margin-right: 8px; }
+.wos-event .up { color: var(--green); }
+.wos-event .down { color: var(--red); }
+@keyframes wos-scroll { to { transform: translateX(-50%); } }
+
+/* ---------- Stats ---------- */
+.wos-event .stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 60px;
+}
+.wos-event .stat {
+  text-align: center; padding: 26px 12px;
+  background: var(--card);
+  border: 1px solid rgba(229, 35, 47, 0.25);
+  border-radius: 14px;
+}
+.wos-event .stat .num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--red); line-height: 1;
+}
+.wos-event .stat .label {
+  margin-top: 6px; font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- Section sub-heading ---------- */
+.wos-event .sub {
+  margin: 90px 0 10px; text-align: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 5vw, 3.2rem); letter-spacing: 0.03em;
+}
+.wos-event .sub span { color: var(--red); }
+.wos-event .sub-note { text-align: center; color: var(--muted); margin: 0 0 40px; }
+
+/* ---------- Phases (timeline) ---------- */
+.wos-event .phases { position: relative; display: grid; gap: 26px; }
+.wos-event .phases::before {
+  content: ""; position: absolute; left: 34px; top: 10px; bottom: 10px; width: 2px;
+  background: linear-gradient(var(--red), transparent);
+}
+.wos-event .phase {
+  position: relative; display: grid; grid-template-columns: 70px 1fr; gap: 24px; align-items: start;
+}
+.wos-event .phase .dot {
+  width: 70px; height: 70px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #120708; border: 2px solid var(--red);
+  box-shadow: 0 0 22px var(--red-glow);
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; color: var(--red);
+  position: relative; z-index: 1;
+}
+.wos-event .phase .card {
+  background: var(--card);
+  border: 1px solid rgba(229, 35, 47, 0.25);
+  border-left: 3px solid var(--red);
+  border-radius: 14px; padding: 26px 30px;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.wos-event .phase .card:hover {
+  transform: translateX(6px);
+  border-color: var(--red);
+  box-shadow: 0 10px 40px rgba(229, 35, 47, 0.18);
+}
+.wos-event .phase .tag {
+  display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem;
+  letter-spacing: 0.15em; color: var(--red); text-transform: uppercase;
+  border: 1px solid rgba(229, 35, 47, 0.5); padding: 4px 10px; border-radius: 999px;
+}
+.wos-event .phase h3 {
+  margin: 12px 0 4px; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.03em;
+}
+.wos-event .phase .real { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
+.wos-event .phase p { margin: 12px 0 0; line-height: 1.7; color: #d8cccc; font-weight: 400; }
+.wos-event .phase ul { margin: 12px 0 0; padding-left: 18px; color: #d8cccc; line-height: 1.8; }
+.wos-event .phase li::marker { color: var(--red); }
+
+/* ---------- Why join (grid) ---------- */
+.wos-event .perks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.wos-event .perk {
+  position: relative; padding: 30px 26px; border-radius: 14px; overflow: hidden;
+  background: var(--card); border: 1px solid rgba(229, 35, 47, 0.25);
+  transition: transform .3s ease, border-color .3s ease;
+}
+.wos-event .perk:hover { transform: translateY(-6px); border-color: var(--red); }
+.wos-event .perk::after { /* corner blob, same as contact cards */
+  content: ""; position: absolute; right: -40px; bottom: -40px; width: 120px; height: 120px;
+  border-radius: 50%; background: rgba(229, 35, 47, 0.08);
+}
+.wos-event .perk svg { width: 34px; height: 34px; color: var(--red); }
+.wos-event .perk h4 {
+  margin: 14px 0 8px; font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em;
+}
+.wos-event .perk p { margin: 0; color: var(--muted); line-height: 1.6; font-weight: 400; }
+
+/* ---------- Rules / dossier ---------- */
+.wos-event .dossier {
+  margin-top: 90px; display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid rgba(229, 35, 47, 0.35); border-radius: 16px; overflow: hidden;
+}
+.wos-event .dossier > div { padding: 36px 34px; }
+.wos-event .dossier .left {
+  background: linear-gradient(135deg, rgba(139, 13, 20, 0.55), rgba(20, 6, 8, 0.9));
+}
+.wos-event .dossier .right { background: rgba(10, 4, 5, 0.9); }
+.wos-event .dossier h3 {
+  margin: 0 0 18px; font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 0.04em;
+}
+.wos-event .dossier ol { margin: 0; padding-left: 20px; line-height: 1.9; color: #e3d6d6; }
+.wos-event .dossier ol li::marker { color: var(--red); font-family: 'Bebas Neue', sans-serif; }
+.wos-event .info-row {
+  display: flex; justify-content: space-between; gap: 16px; padding: 14px 0;
+  border-bottom: 1px dashed rgba(229, 35, 47, 0.3); font-family: 'Bebas Neue', sans-serif; font-size: 0.92rem;
+}
+.wos-event .info-row:last-child { border-bottom: 0; }
+.wos-event .info-row span:first-child { color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.wos-event .info-row span:last-child { color: var(--text); text-align: right; }
+
+/* ---------- CTA ---------- */
+.wos-event .cta { margin-top: 70px; text-align: center; }
+.wos-event .cta p {
+  font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 24px; letter-spacing: 0.03em;
+}
+.wos-event .cta p span { color: var(--red); }
+.wos-event .btn {
+  display: inline-block; padding: 16px 38px; border: 2px solid var(--red); border-radius: 10px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.04em;
+  color: var(--text); text-decoration: none; text-transform: uppercase;
+  transition: background .25s ease, box-shadow .25s ease;
+}
+.wos-event .btn:hover { background: var(--red); box-shadow: 0 0 30px var(--red-glow); }
+
+/* ---------- Scroll reveal ---------- */
+.wos-event .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+.wos-event .reveal.show { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .wos-event .stats { grid-template-columns: repeat(2, 1fr); }
+  .wos-event .perks { grid-template-columns: 1fr 1fr; }
+  .wos-event .dossier { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .wos-event { padding: 80px 16px 90px; }
+  .wos-event .ticker { margin: 40px -16px 0; }
+  .wos-event .perks { grid-template-columns: 1fr; }
+  .wos-event .phases::before { left: 24px; }
+  .wos-event .phase { grid-template-columns: 50px 1fr; gap: 14px; }
+  .wos-event .phase .dot { width: 50px; height: 50px; font-size: 1.4rem; }
+  .wos-event .phase .card { padding: 20px; }
+  .wos-event .dossier > div { padding: 26px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wos-event .ticker-track { animation: none; }
+  .wos-event .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* =========================================================
+   CATCHY HEIST EFFECTS (v2)
+   ========================================================= */
+
+/* 1) YOUR BACKGROUND IMAGE
+   Put the same Money Heist image your hero/contact sections use
+   in this folder, name it  heist-bg.jpg  (or change the path below). */
+.wos-event .bg-photo {
+  position: absolute; inset: 0; z-index: 0;
+  background: url("heist-bg.jpg") center / cover no-repeat fixed;
+  opacity: 0.22; filter: grayscale(30%) contrast(1.1);
+}
+.wos-event .bg-photo::after { /* dark red wash so text stays readable */
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,6,6,.85) 0%, rgba(40,4,8,.55) 50%, rgba(10,6,6,.9) 100%);
+}
+.wos-event .container { z-index: 2; }
+
+/* 2) Red alarm light sweeping across */
+.wos-event .alarm {
+  position: absolute; top: -20%; left: 50%; width: 140vmax; height: 140vmax; z-index: 1;
+  transform: translateX(-50%);
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(229,35,47,.16) 20deg, transparent 45deg);
+  animation: wos-spin 7s linear infinite; pointer-events: none; mix-blend-mode: screen;
+}
+@keyframes wos-spin { to { transform: translateX(-50%) rotate(360deg); } }
+
+/* 3) Falling banknotes */
+.wos-event .money { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.wos-event .note {
+  position: absolute; top: -60px; width: 58px; height: 28px; border-radius: 3px;
+  background: linear-gradient(135deg, #3d8b55, #1f5c34);
+  border: 1px solid #7fd19a; opacity: .55;
+  display: grid; place-items: center; color: #c9f5d6; font: 400 16px 'Bebas Neue', sans-serif;
+  animation: wos-fall linear infinite;
+}
+@keyframes wos-fall {
+  0%   { transform: translateY(-60px) rotate(0deg) rotateX(0deg); }
+  100% { transform: translateY(110vh) rotate(540deg) rotateX(720deg); }
+}
+
+/* 4) Spinning vault door behind the title */
+.wos-event .vault {
+  position: absolute; top: -40px; left: 50%; width: 420px; height: 420px; z-index: -1;
+  transform: translateX(-50%); color: rgba(229,35,47,.18);
+  animation: wos-vault 40s linear infinite;
+}
+@keyframes wos-vault { to { transform: translateX(-50%) rotate(360deg); } }
+
+/* 5) Glitch title */
+.wos-event .glitch { position: relative; display: inline-block; }
+.wos-event .glitch::before, .wos-event .glitch::after {
+  content: attr(data-text); position: absolute; inset: 0; pointer-events: none;
+}
+.wos-event .glitch::before { color: #00e5ff; mix-blend-mode: screen; animation: wos-g1 3s infinite steps(1); }
+.wos-event .glitch::after  { color: #ff0033; mix-blend-mode: screen; animation: wos-g2 3s infinite steps(1); }
+@keyframes wos-g1 { 0%,88%,100%{transform:none;opacity:0} 90%{transform:translate(-4px,-2px);opacity:.8;clip-path:inset(10% 0 55% 0)} 94%{transform:translate(3px,1px);opacity:.8;clip-path:inset(60% 0 5% 0)} }
+@keyframes wos-g2 { 0%,88%,100%{transform:none;opacity:0} 91%{transform:translate(4px,2px);opacity:.8;clip-path:inset(40% 0 30% 0)} 95%{transform:translate(-3px,-1px);opacity:.8;clip-path:inset(5% 0 70% 0)} }
+
+/* 6) "Heist begins in" countdown */
+.wos-event .countdown { display: flex; justify-content: center; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+.wos-event .countdown div {
+  min-width: 86px; padding: 14px 10px; text-align: center; border-radius: 10px;
+  background: rgba(0,0,0,.6); border: 1px solid rgba(229,35,47,.5);
+  box-shadow: inset 0 0 18px rgba(229,35,47,.15);
+}
+.wos-event .countdown b { display: block; font: 400 2.6rem/1 'Bebas Neue', sans-serif; color: var(--red); }
+.wos-event .countdown small { font-size: .7rem; letter-spacing: .25em; color: var(--muted); }
+.wos-event .countdown-label {
+  text-align: center; margin-top: 30px; font-family: 'Bebas Neue', sans-serif;
+  font-size: .8rem; letter-spacing: .3em; color: var(--red); text-transform: uppercase;
+  animation: wos-blink 1.2s infinite;
+}
+@keyframes wos-blink { 50% { opacity: .35; } }
+
+/* 7) "CLASSIFIED" stamp on the rules box */
+.wos-event .dossier { position: relative; }
+.wos-event .stamp {
+  position: absolute; top: 18px; right: 22px; z-index: 3;
+  padding: 6px 14px; border: 3px solid var(--red); border-radius: 6px;
+  font: 400 1.4rem 'Bebas Neue', sans-serif; letter-spacing: .15em; color: var(--red);
+  transform: rotate(-12deg); opacity: .8;
+}
+
+/* Cards get a red glow line on hover */
+.wos-event .stat, .wos-event .perk { backdrop-filter: blur(4px); }
+.wos-event .stat:hover { border-color: var(--red); box-shadow: 0 0 25px rgba(229,35,47,.25); }
+
+@media (max-width: 600px) {
+  .wos-event .vault { width: 280px; height: 280px; }
+  .wos-event .bg-photo { background-attachment: scroll; }
+  .wos-event .countdown div { min-width: 68px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wos-event .alarm, .wos-event .note, .wos-event .vault,
+  .wos-event .glitch::before, .wos-event .glitch::after { animation: none; }
+}
+
+/* =========================================================
+   BEBAS NEUE EVERYWHERE — size/spacing tweaks so the
+   body text stays easy to read in an all-caps font
+   ========================================================= */
+.wos-event, .wos-event * { font-family: 'Bebas Neue', sans-serif !important; font-weight: 400 !important; }
+.wos-event .lead { font-size: 1.55rem; line-height: 1.35; letter-spacing: 0.04em; }
+.wos-event .sub-note { font-size: 1.3rem; letter-spacing: 0.06em; }
+.wos-event .phase p, .wos-event .phase ul { font-size: 1.3rem; line-height: 1.4; letter-spacing: 0.04em; }
+.wos-event .phase .real { font-size: 1.1rem; }
+.wos-event .phase .tag { font-size: 0.95rem; }
+.wos-event .perk p { font-size: 1.2rem; line-height: 1.35; letter-spacing: 0.04em; }
+.wos-event .dossier ol { font-size: 1.3rem; line-height: 1.6; letter-spacing: 0.04em; }
+.wos-event .info-row { font-size: 1.2rem; letter-spacing: 0.06em; }
+.wos-event .ticker-track { font-size: 1.15rem; letter-spacing: 0.08em; }
+.wos-event .stat .label, .wos-event .countdown small { font-size: 1rem; }
+.wos-event .eyebrow, .wos-event .countdown-label { font-size: 1.15rem; }
+.wos-event .btn { font-size: 1.35rem; letter-spacing: 0.1em; }
+.wos-event .lead strong { color: var(--red); }
+/* stamp sits in the bottom of the rules panel, away from the details */
+.wos-event .stamp { top: auto; right: auto; bottom: 26px; left: calc(50% - 170px); }
+@media (max-width: 900px) { .wos-event .stamp { display: none; } }
+
+/* ---------- FAQ (v4) ---------- */
+.wos-event .faq { max-width: 860px; margin: 0 auto; display: grid; gap: 14px; }
+.wos-event .faq details {
+  background: var(--card); border: 1px solid rgba(229,35,47,.25); border-left: 3px solid var(--red);
+  border-radius: 12px; padding: 0 24px; transition: border-color .3s ease, box-shadow .3s ease;
+}
+.wos-event .faq details[open], .wos-event .faq details:hover { border-color: var(--red); box-shadow: 0 0 25px rgba(229,35,47,.15); }
+.wos-event .faq summary {
+  list-style: none; cursor: pointer; padding: 20px 36px 20px 0; position: relative;
+  font-size: 1.6rem; letter-spacing: .04em; color: var(--text);
+}
+.wos-event .faq summary::-webkit-details-marker { display: none; }
+.wos-event .faq summary::after {
+  content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  font-size: 2rem; color: var(--red); transition: transform .3s ease;
+}
+.wos-event .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.wos-event .faq details p { margin: 0 0 20px; font-size: 1.3rem; line-height: 1.4; letter-spacing: .04em; color: var(--muted); }
+.wos-event .dossier { margin-bottom: 0; }
+.wos-event .info-row span.free { color: var(--green); font-size: 1.4rem; }
+.wos-event .cta { margin-top: 60px; }
+.wos-event .cta p { margin: 0; }
+
+/* ---------- Wolf emblem (v5) ---------- */
+.wos-event .wolf-wrap {
+  position: relative; width: 200px; height: 200px; margin: 0 auto 26px;
+  display: grid; place-items: center;
+}
+.wos-event .wolf-wrap .vault {
+  top: 50%; left: 50%; width: 330px; height: 330px; z-index: 0;
+  transform: translate(-50%, -50%); color: rgba(229,35,47,.28);
+  animation: wos-vault-c 40s linear infinite;
+}
+@keyframes wos-vault-c { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.wos-event .wolf {
+  position: relative; z-index: 1; width: 190px; height: auto;
+  filter: drop-shadow(0 0 28px rgba(229,35,47,.45));
+  animation: wos-float 4s ease-in-out infinite;
+}
+@keyframes wos-float { 50% { transform: translateY(-8px); } }
+.wos-event .wolf-eyes { animation: wos-eyes 5s infinite; transform-origin: center; }
+@keyframes wos-eyes { 0%,92%,100% { opacity: 1; } 95% { opacity: .15; } }
+@media (max-width: 600px) {
+  .wos-event .wolf-wrap { width: 150px; height: 150px; }
+  .wos-event .wolf { width: 140px; }
+  .wos-event .wolf-wrap .vault { width: 250px; height: 250px; }
+}
+@media (prefers-reduced-motion: reduce) { .wos-event .wolf, .wos-event .wolf-eyes, .wos-event .wolf-wrap .vault { animation: none; } }
+.wos-event .wolf-wrap { margin: 50px auto 80px; }
+@media (max-width: 600px) { .wos-event .wolf-wrap { margin: 40px auto 60px; } }
+
+/* =========================================================
+   v6 — NO TIMELINE + SLIGHTLY DARKER, CALMER TONE
+   ========================================================= */
+
+/* Darker base palette */
+.wos-event {
+  --bg: #050303;
+  --card: rgba(16, 7, 8, 0.9);
+  --muted: #a39596;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(110, 10, 16, 0.22), transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(110, 10, 16, 0.15), transparent 55%),
+    var(--bg);
+}
+.wos-event::before { opacity: .6; }
+.wos-event .bg-photo { opacity: .15; }
+.wos-event .bg-photo::after {
+  background: linear-gradient(180deg, rgba(5,3,3,.92) 0%, rgba(25,3,6,.7) 50%, rgba(5,3,3,.95) 100%);
+}
+
+/* Toned-down effects */
+.wos-event .alarm { opacity: .55; animation-duration: 10s; }
+.wos-event .note { opacity: .3; }
+.wos-event .glitch::before, .wos-event .glitch::after { filter: opacity(.55); }
+.wos-event .wolf { filter: drop-shadow(0 0 18px rgba(229,35,47,.28)); }
+.wos-event .wolf-wrap .vault { color: rgba(229,35,47,.18); }
+.wos-event .phase .dot, .wos-event .countdown div { box-shadow: none; }
+.wos-event .countdown-label { animation-duration: 2s; }
+.wos-event .stat:hover, .wos-event .faq details:hover { box-shadow: 0 0 18px rgba(229,35,47,.15); }
+.wos-event .phase .card:hover { box-shadow: 0 10px 30px rgba(229,35,47,.1); }
+.wos-event .ticker { background: rgba(0,0,0,.75); border-color: rgba(229,35,47,.25); }
+.wos-event .dossier .left { background: linear-gradient(135deg, rgba(100, 10, 16, 0.4), rgba(12, 4, 5, 0.95)); }
+.wos-event .dossier .right { background: rgba(6, 3, 3, 0.95); }
+
+/* Steps: no timeline line — three cards side by side */
+.wos-event .phases { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.wos-event .phases::before { display: none; }
+.wos-event .phase { display: block; position: relative; }
+.wos-event .phase .card { height: 100%; padding-top: 30px; }
+.wos-event .phase .card:hover { transform: translateY(-6px); }
+.wos-event .phase .dot {
+  position: absolute; top: 14px; right: 20px; z-index: 2;
+  width: auto; height: auto; background: none; border: 0; border-radius: 0;
+  font-size: 3.4rem; line-height: 1; color: rgba(229,35,47,.22);
+}
+@media (max-width: 900px) {
+  .wos-event .phases { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .wos-event .phase { display: block; }
+  .wos-event .phase .dot { width: auto; height: auto; font-size: 2.8rem; }
+}
+
+/* =========================================================
+   v7 — EVEN DARKER
+   ========================================================= */
+.wos-event {
+  --bg: #020101;
+  --card: rgba(9, 4, 5, 0.94);
+  --muted: #8f8384;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(90, 8, 14, 0.14), transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(90, 8, 14, 0.09), transparent 55%),
+    var(--bg);
+}
+.wos-event::before { opacity: .35; }
+.wos-event .bg-photo { opacity: .1; }
+.wos-event .bg-photo::after {
+  background: linear-gradient(180deg, rgba(2,1,1,.95) 0%, rgba(14,2,4,.8) 50%, rgba(2,1,1,.97) 100%);
+}
+.wos-event .alarm { opacity: .35; }
+.wos-event .note { opacity: .2; }
+.wos-event .stat, .wos-event .perk, .wos-event .phase .card { border-color: rgba(229,35,47,.16); }
+.wos-event .perk::after { background: rgba(229,35,47,.05); }
+.wos-event .dossier { border-color: rgba(229,35,47,.22); }
+.wos-event .dossier .left { background: linear-gradient(135deg, rgba(70, 8, 12, 0.35), rgba(6, 2, 3, 0.97)); }
+.wos-event .dossier .right { background: rgba(3, 1, 1, 0.97); }
+.wos-event .phase .dot { color: rgba(229,35,47,.16); }
+.wos-event .dossier .left { padding-bottom: 90px; }
+.wos-event .dossier > .stamp { padding: 4px 14px; line-height: 1.2; bottom: 26px; left: 34px; }
+@media (max-width: 900px) { .wos-event .dossier .left { padding-bottom: 26px; } }
+/* v8 — only two stats left */
+.wos-event .stats { grid-template-columns: repeat(2, 1fr); max-width: 620px; margin-left: auto; margin-right: auto; }
