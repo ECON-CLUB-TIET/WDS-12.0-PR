@@ -1,3 +1,4 @@
+import EventOverview from "./EventOverview";
 import './App.css'
 
 import Header from "./components/Header";
@@ -12,6 +13,7 @@ function App() {
     <>
       <Header />
       <Hero />
+      <EventOverview />
       <Gallery />
       <Contact />
       <Timeline />
