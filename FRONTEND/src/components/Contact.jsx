@@ -1,18 +1,12 @@
-import { useState } from 'react'
-import "./contact.css"
-import {
-  FaEnvelope,
-  FaPhone,
-  FaInstagram,
-  FaLinkedin
-} from "react-icons/fa";
+import "./Contact.css";
+import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa";
 function Contact() {
   const contacts = [
     {
       title: "Email",
       detail: "econclub@thapar.edu",
       link: "mailto:econ@gmail.com",
-      icon: <FaEnvelope />
+      icon: <FaEnvelope />,
     },
     {
       title: "Phone",
@@ -24,30 +18,26 @@ function Contact() {
       title: "Instagram",
       detail: "@econ_tiet",
       link: "https://instagram.com/econ_tiet",
-      icon: <FaInstagram />
+      icon: <FaInstagram />,
     },
     {
       title: "LinkedIn",
       detail: "Our LinkedIn Page",
       link: "https://linkedin.com/company/econclub/",
-      icon: <FaLinkedin />
+      icon: <FaLinkedin />,
     },
   ];
 
   return (
     <div className="page">
-      <nav className="navbar">
-        <h2>ECON CLUB</h2>
-        <span>Contact</span>
-      </nav>
 
       <main className="contact-section">
         <div className="heading">
           <p className="tagline">LET'S CONNECT</p>
           <h1>Get In Touch</h1>
           <p>
-            Have questions, ideas or want to collaborate?
-            We'd love to hear from you.
+            Have questions, ideas or want to collaborate? We'd love to hear from
+            you.
           </p>
         </div>
 
@@ -56,8 +46,7 @@ function Contact() {
             <a
               href={contact.link}
               target={
-                contact.title === "Instagram" ||
-                contact.title === "LinkedIn"
+                contact.title === "Instagram" || contact.title === "LinkedIn"
                   ? "_blank"
                   : undefined
               }
@@ -79,9 +68,7 @@ function Contact() {
         </div>
       </main>
 
-      <footer>
-        © 2026 econ club. All rights reserved.
-      </footer>
+      <footer>© 2026 econ club. All rights reserved.</footer>
     </div>
   );
 }
