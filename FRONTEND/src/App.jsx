@@ -1,9 +1,11 @@
-import "./App.css";
+import './App.css'
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
+import Timeline from './components/Timeline';
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <Hero />
       <Gallery />
       <Contact />
+      <Timeline />
     </>
   );
 }
