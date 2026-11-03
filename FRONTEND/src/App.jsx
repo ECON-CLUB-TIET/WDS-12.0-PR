@@ -14,9 +14,9 @@ function App() {
       <Header />
       <Hero />
       <EventOverview />
+      <Timeline />
       <Gallery />
       <Contact />
-      <Timeline />
     </>
   );
 }
