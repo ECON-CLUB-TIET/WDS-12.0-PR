@@ -4,7 +4,7 @@ const timelineEvents = [
   {
     id: 1,
     phase: 'PHASE 01',
-    time: '10/11/2026',
+    time: '',
     title: 'REGISTRATION',
     subtitle: 'THE BLUEPRINT & RECRUITMENT',
     description: 'Every heist begins with a plan. Assemble your crew, secure your clearance, and study the target. Once the clock starts ticking, there is no turning back.',
@@ -12,7 +12,7 @@ const timelineEvents = [
   {
     id: 2,
     phase: 'PHASE 02',
-    time: '18/11/2026',
+    time: '17/11/2026',
     title: 'SPEAKER SESSION',
     subtitle: 'INSIDE INTEL & MASTERMIND BRIEFING',
     description: 'Infiltrate the vault of knowledge. Listen closely to the Mastermind as we decode market vulnerabilities and sharp-tune our strategy before stepping onto the floor.',
@@ -20,7 +20,7 @@ const timelineEvents = [
   {
     id: 3,
     phase: 'PHASE 03',
-    time: '21/11/2026',
+    time: '22/11/2026',
     title: 'MAIN TRADING DAY',
     subtitle: 'EXECUTION & THE DALAL STREET HEIST',
     description: 'The alarm sounds. The trading floor opens. Navigate real-time market chaos, execute high-stakes trades, survive unexpected curveballs, and escape with the ultimate prize.',
@@ -95,13 +95,6 @@ export default function Timeline() {
               </div>
             );
           })}
-        </div>
-
-        {/* Footer Accent Line */}
-        <div className="w-full max-w-4xl flex items-center justify-center gap-6 mt-12 text-xs tracking-[3px] text-zinc-300 uppercase font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-          <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#e32636]/60 to-transparent" />
-          <span className="font-['Bebas_Neue'] text-lg tracking-widest">WOLF OF DALAL STREET</span>
-          <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#e32636]/60 to-transparent" />
         </div>
       </div>
     </section>

@@ -1,36 +1,24 @@
 import { useEffect, useState } from "react";
-import "../Gallery.css";
+import "./Gallery.css";
 
-// Replace these image URLs with your event photographs whenever they are ready.
-const galleryPhotos = [
-  "/components/gallery/IMG_0015.JPG",
-//   "/gallery/IMG_0016.JPG",
-//   "/gallery/IMG_0017.JPG",
-//   "/gallery/IMG_0018.JPG",
-//   "/gallery/IMG_0019.JPG",
-//   "/gallery/IMG_0021.JPG",
-//   "/gallery/IMG_0022.jpeg",
-//   "/gallery/IMG_0023.jpeg",
-//   "/gallery/IMG_0024.jpeg",
-//   "/gallery/IMG_0025.jpeg",
-//   "/gallery/IMG_0026.jpeg",
-//   "/gallery/IMG_0027.jpeg",
-//   "/gallery/IMG_0028.jpeg",
-//   "/gallery/IMG_0029.jpeg",
-//   "/gallery/IMG_0030.jpeg",
-//   "/gallery/IMG_0031.jpeg",
-//   "/gallery/IMG_0032.jpeg",
-//   "/gallery/IMG_0033.jpeg",
-//   "/gallery/IMG_0034.jpeg",
-//   "/gallery/IMG_0035.jpeg",
-//   "/gallery/IMG_0036.jpeg",
-//   "/gallery/IMG_0037.jpeg",
-//   "/gallery/IMG_0038.jpeg",
-//   "/gallery/IMG_0039.jpeg",
-//   "/gallery/IMG_0040.jpeg",
-];
+// Photos are hosted publicly in Supabase Storage (bucket "Gallery Photos").
+const GALLERY_BASE_URL =
+  `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/Gallery%20Photos`;
+
+// IMG_0015 ... IMG_0040 (IMG_0020 does not exist in the bucket)
+const PHOTO_NUMBERS = Array.from({ length: 26 }, (_, i) => i + 15).filter((n) => n !== 20);
+
+const ALL_PHOTOS = PHOTO_NUMBERS.map((n) => {
+    const name = `IMG_${String(n).padStart(4, "0")}.JPG`;
+    return { src: `${GALLERY_BASE_URL}/${name}`, alt: `Wolf of Dalal Street event photo ${n}` };
+});
 function Gallery() {
     const [activePhoto, setActivePhoto] = useState(null);
+    const [failed, setFailed] = useState([]);
+
+    // Drop any photo that fails to load so no broken cards appear.
+    const galleryPhotos = ALL_PHOTOS.filter((p) => !failed.includes(p.src));
+    const handleError = (src) => setFailed((prev) => (prev.includes(src) ? prev : [...prev, src]));
 
     const closeLightbox = () => setActivePhoto(null);
     const showPrevious = () => {
@@ -74,7 +62,7 @@ function Gallery() {
                     tabIndex={isDuplicate ? -1 : 0}
                 >
                     <span className="gallery-card-image-wrap">
-                        <img src={photo.src} alt={isDuplicate ? "" : photo.alt} loading={isDuplicate || index > 2 ? "lazy" : "eager"} />
+                        <img src={photo.src} alt={isDuplicate ? "" : photo.alt} loading={isDuplicate || index > 2 ? "lazy" : "eager"} onError={() => handleError(photo.src)} />
                     </span>
                 </button>
             ))}
@@ -95,12 +83,6 @@ function Gallery() {
                     {renderSequence(true)}
                 </div>
             </section>
-
-            <div className="gallery-bottomline">
-                <span>WOLF OF DALAL STREET</span>
-                <span className="gallery-bottomline-rule" />
-                <span>MEMORIES IN MOTION <b>✳</b></span>
-            </div>
 
             {activePhoto !== null && (
                 <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Expanded gallery photograph" onClick={closeLightbox}>

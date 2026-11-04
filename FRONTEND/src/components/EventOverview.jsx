@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./event-overview.css";
+import "./EventOverview.css";
 
 // Wolf of Dalal Street — Event Overview (React / Vite)
 // Put heist-bg.jpg in the /public folder and change the CSS url to "/heist-bg.jpg"
@@ -127,37 +127,6 @@ export default function EventOverview() {
             <h4>Beat the Jobbers</h4>
             <p>Every trade goes through the jobbers &mdash; outthink them to get your deal listed.</p>
           </div>
-          <div className="perk reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <h4>Free for Thapar Students</h4>
-            <p>Every Thapar Institute student can take part &mdash; no registration fee, no finance background needed.</p>
-          </div>
-        </div>
-    
-        {/* Rules + details */}
-        <div className="dossier reveal">
-          <div className="stamp">CLASSIFIED</div>
-          <div className="left">
-            <h3>THE RULES OF THE HEIST</h3>
-            <ol>
-              <li>Open to all students of Thapar Institute.</li>
-              <li>Come solo or as a team &mdash; solo players are grouped by our team.</li>
-              <li>Trading is virtual; each team trades only from its own portfolio.</li>
-              <li>All trades must be listed through the jobbers.</li>
-              <li>Highest-performing portfolio wins. Judges' decision is final.</li>
-            </ol>
-          </div>
-          <div className="right">
-            <h3>MISSION DETAILS</h3>
-            <div className="info-row"><span>Venue</span><span>LT 201, TIET Patiala</span></div>
-            <div className="info-row"><span>Registration Fee</span><span className="free">FREE</span></div>
-            <div className="info-row"><span>Who can join</span><span>All Thapar Students</span></div>
-            <div className="info-row"><span>Organised by</span><span>ECON Club, Thapar</span></div>
-          </div>
-        </div>
-    
-        <div className="cta reveal">
-          <p>THE PLAN IS READY. <span>ARE YOU?</span></p>
         </div>
     
       </div>

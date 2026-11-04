@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./register.css";
+import "./Register.css";
 import wdsLogo from "../assets/wdslogo.png";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
@@ -119,7 +119,7 @@ export default function Register() {
         <div className="reg-heading">
           <p className="reg-eyebrow"><span /> ECON PRESENTS <span /></p>
           <h1>JOIN THE <b>HEIST</b></h1>
-          <p className="reg-sub">Assemble your crew of 1 to 4 and secure your spot on the trading floor.</p>
+          <p className="reg-sub">Assemble your crew and secure your spot on the trading floor.</p>
         </div>
 
         <div className="reg-card">

@@ -1,74 +1,84 @@
-import "./contact.css";
-import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa";
-function Contact() {
-  const contacts = [
-    {
-      title: "Email",
-      detail: "econclub@thapar.edu",
-      link: "mailto:econ@gmail.com",
-      icon: <FaEnvelope />,
-    },
-    {
-      title: "Phone",
-      detail: "+91",
-      link: "tel:+91",
-      icon: "📞",
-    },
-    {
-      title: "Instagram",
-      detail: "@econ_tiet",
-      link: "https://instagram.com/econ_tiet",
-      icon: <FaInstagram />,
-    },
-    {
-      title: "LinkedIn",
-      detail: "Our LinkedIn Page",
-      link: "https://linkedin.com/company/econclub/",
-      icon: <FaLinkedin />,
-    },
-  ];
+import "./Contact.css";
+import { FaEnvelope, FaInstagram, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
+const PHONE_DISPLAY = "+91 90410 26330";
+const PHONE_RAW = "919041026330";
+
+const channels = [
+  {
+    code: "01",
+    title: "Email",
+    detail: "econclub@thapar.edu",
+    cta: "Send a message",
+    link: "mailto:econclub@thapar.edu",
+    icon: <FaEnvelope />,
+  },
+  {
+    code: "02",
+    title: "Call",
+    detail: PHONE_DISPLAY,
+    cta: "Dial the crew",
+    link: `tel:+${PHONE_RAW}`,
+    icon: <FaPhoneAlt />,
+  },
+  {
+    code: "03",
+    title: "Instagram",
+    detail: "@econ_tiet",
+    cta: "Follow the heist",
+    link: "https://instagram.com/econ_tiet",
+    icon: <FaInstagram />,
+    external: true,
+  },
+];
+
+function Contact() {
   return (
     <div className="contact-page" id="contact">
+      <div className="contact-glow" aria-hidden="true" />
 
       <main className="contact-section">
         <div className="contact-heading">
-          <p className="contact-tagline">LET'S CONNECT</p>
-          <h1>Get In Touch</h1>
-          <p>
-            Have questions, ideas or want to collaborate? We'd love to hear from
-            you.
+          <h1>
+            GET IN <b>TOUCH</b>
+          </h1>
+          <p className="contact-lead">
+            Questions about the heist, ideas for a collab, or just want to say hi?
+            Pick a channel — the crew replies fast.
           </p>
         </div>
 
         <div className="contact-grid">
-          {contacts.map((contact) => (
+          {channels.map((c) => (
             <a
-              href={contact.link}
-              target={
-                contact.title === "Instagram" || contact.title === "LinkedIn"
-                  ? "_blank"
-                  : undefined
-              }
-              rel="noopener noreferrer"
+              key={c.title}
+              href={c.link}
+              target={c.external ? "_blank" : undefined}
+              rel={c.external ? "noopener noreferrer" : undefined}
               className="contact-card"
-              key={contact.title}
             >
-              <div className="contact-icon">{contact.icon}</div>
-              <h3>{contact.title}</h3>
-              <p>{contact.detail}</p>
-              <span className="contact-arrow">↗</span>
+              <span className="contact-code">CHANNEL {c.code}</span>
+              <span className="contact-icon">{c.icon}</span>
+              <h3>{c.title}</h3>
+              <p>{c.detail}</p>
+              <span className="contact-cta">
+                {c.cta} <em>→</em>
+              </span>
             </a>
           ))}
         </div>
 
         <div className="contact-bottom">
-          <h2>Stay Connected.</h2>
-          <p>Follow our journey and be a part of our community.</p>
+          <span className="contact-rule" />
+          <h2>
+            STAY <b>CONNECTED.</b>
+          </h2>
+          <span className="contact-rule" />
         </div>
+        <p className="contact-bottom-note">Follow our journey and be a part of the community.</p>
       </main>
 
-      <footer>© 2026 ECON Club. All rights reserved.</footer>
+      <footer className="contact-footer">© 2026 ECON Club. All rights reserved.</footer>
     </div>
   );
 }

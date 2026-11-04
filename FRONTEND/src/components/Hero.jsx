@@ -34,25 +34,6 @@ function Hero() {
 
             </div>
 
-            {/* Bottom categories */}
-            <div className="hero-footer">
-
-                <span className="footer-line"></span>
-
-                <span>STRATEGY</span>
-
-                <span className="separator">|</span>
-
-                <span>FINANCE</span>
-
-                <span className="separator">|</span>
-
-                <span>COMPETITION</span>
-
-                <span className="footer-line"></span>
-
-            </div>
-
         </section>
     );
 }
