@@ -1,2 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+
+/* =========================
+   SITE-WIDE DESIGN TOKENS
+   Shared by every section so the page reads as one site.
+========================= */
+:root {
+  --wds-red: #e32636;
+  --wds-red-deep: #8b0d14;
+  --wds-black: #070606;
+  --wds-text: #f5f1f1;
+  --wds-muted: #a7a0a0;
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --header-h: 75px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  margin: 0;
+  background: var(--wds-black);
+  color: var(--wds-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Soft seams: each section fades into the shared black so edges blend */
+.hero, #event, #timeline, #gallery, #contact { position: relative; }
+
+.hero::after,
+#event::after,
+#timeline::after,
+#gallery::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: clamp(70px, 12vh, 140px);
+  background: linear-gradient(to bottom, transparent, var(--wds-black));
+  pointer-events: none;
+  z-index: 3;
+}
+
+#timeline::before,
+#contact::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: clamp(70px, 12vh, 140px);
+  background: linear-gradient(to top, transparent, var(--wds-black));
+  pointer-events: none;
+  z-index: 3;
+}
+#contact::after { z-index: 0; }
+
+.gallery-seam-top {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: clamp(70px, 12vh, 140px);
+  background: linear-gradient(to top, transparent, var(--wds-black));
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Thin red hairline between sections, same as hero/footer rules */
+#event, #timeline, #gallery, #contact {
+  border-top: 1px solid rgba(201, 35, 50, 0.45);
+}
+
+@media (max-width: 768px) {
+  :root { --header-h: 65px; }
+}
+

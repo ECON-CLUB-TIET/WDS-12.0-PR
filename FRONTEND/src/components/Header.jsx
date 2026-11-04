@@ -1,16 +1,23 @@
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import wdsLogo from "../assets/wdslogo.png";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 40);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     const closeMenu = () => {
         setMenuOpen(false);
     };
 
     return (
-        <header className="header">
+        <header className={`header ${scrolled || menuOpen ? "scrolled" : ""}`}>
 
             <a href="#" className="logo" onClick={closeMenu}>
                 <img src={wdsLogo} alt="Wolf of Dalal Street Logo" />
@@ -29,9 +36,11 @@ function Header() {
 
             <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
                 <a href="#" onClick={closeMenu}>HOME</a>
-                <a href="#register" onClick={closeMenu}>REGISTER</a>
-                <a href="#about" onClick={closeMenu}>ABOUT</a>
-                <a href="#about" onClick={closeMenu}>CONTACT US</a>
+                <a href="#/register" onClick={closeMenu}>REGISTER</a>
+                <a href="#event" onClick={closeMenu}>ABOUT</a>
+                <a href="#timeline" onClick={closeMenu}>TIMELINE</a>
+                <a href="#gallery" onClick={closeMenu}>GALLERY</a>
+                <a href="#contact" onClick={closeMenu}>CONTACT US</a>
             </nav>
 
         </header>

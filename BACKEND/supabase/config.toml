@@ -1,0 +1,11 @@
+# Supabase CLI project config. Run CLI commands from the BACKEND folder.
+project_id = "wds-12"
+
+[api]
+enabled = true
+
+[db]
+major_version = 15
+
+[db.migrations]
+enabled = true

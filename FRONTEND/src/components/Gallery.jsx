@@ -90,7 +90,7 @@ function Gallery() {
     );
 
     return (
-        <main className="gallery-page">
+        <main className="gallery-page" id="gallery"><div className="gallery-seam-top" />
             <section className="gallery-intro" aria-labelledby="gallery-title">
                 <p className="gallery-eyebrow"><span /> ECON CLUB PRESENTS <span /></p>
                 <h1 id="gallery-title">GALLERY</h1>

@@ -1,4 +1,3 @@
-import React from 'react';
 import heistBg from '../assets/new-bg.jpg';
 
 const timelineEvents = [
@@ -40,12 +39,12 @@ export default function Timeline() {
         {/* Main Section Title */}
         <h2 className="font-['Bebas_Neue'] text-5xl md:text-7xl tracking-wider mb-16 uppercase text-center drop-shadow-[0_4px_8px_rgba(0,0,0,1)]">
           <span className="text-white mr-3">EVENT</span>
-          <span className="text-[#e50914] [text-shadow:_0_0_18px_rgba(229,9,20,0.8)]">TIMELINE</span>
+          <span className="text-[#e32636] [text-shadow:_0_0_18px_rgba(227,38,54,0.8)]">TIMELINE</span>
         </h2>
 
         {/* Central Vertical Timeline */}
         <div className="relative w-full max-w-4xl">
-          <div className="absolute top-0 bottom-0 left-[20px] md:left-1/2 w-[2px] bg-gradient-to-b from-[#e50914] via-[#e50914] to-transparent -translate-x-1/2 shadow-[0_0_15px_rgba(229,9,20,1)]" />
+          <div className="absolute top-0 bottom-0 left-[20px] md:left-1/2 w-[2px] bg-gradient-to-b from-[#e32636] via-[#e32636] to-transparent -translate-x-1/2 shadow-[0_0_15px_rgba(227,38,54,1)]" />
 
           {timelineEvents.map((item, index) => {
             const isEven = index % 2 === 0;
@@ -60,7 +59,7 @@ export default function Timeline() {
               >
                 {/* Center Node Dot */}
                 <div
-                  className={`absolute top-6 w-4 h-4 bg-[#e50914] border-2 border-black rounded-full z-20 shadow-[0_0_15px_#e50914] left-[12px] -translate-x-1/2 ${
+                  className={`absolute top-6 w-4 h-4 bg-[#e32636] border-2 border-black rounded-full z-20 shadow-[0_0_15px_#e32636] left-[12px] -translate-x-1/2 ${
                     isEven
                       ? 'md:left-auto md:right-0 md:translate-x-1/2'
                       : 'md:left-0 md:-translate-x-1/2'
@@ -68,9 +67,9 @@ export default function Timeline() {
                 />
 
                 {/* Translucent Card */}
-                <div className="bg-black/85 backdrop-blur-md border border-[#e50914]/60 rounded-md p-6 shadow-[0_8px_30px_rgb(0,0,0,0.85)] transition-all duration-300 hover:border-[#e50914] hover:shadow-[0_0_30px_rgba(229,9,20,0.5)] hover:-translate-y-1">
+                <div className="bg-black/85 backdrop-blur-md border border-[#e32636]/60 rounded-md p-6 shadow-[0_8px_30px_rgb(0,0,0,0.85)] transition-all duration-300 hover:border-[#e32636] hover:shadow-[0_0_30px_rgba(227,38,54,0.5)] hover:-translate-y-1">
                   <div className={`flex justify-between items-center mb-2 pb-2 border-b border-white/10 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                    <span className="font-['Bebas_Neue'] text-lg text-[#e50914] tracking-wider uppercase">
+                    <span className="font-['Bebas_Neue'] text-lg text-[#e32636] tracking-wider uppercase">
                       {item.phase}
                     </span>
                     <span className="text-xs font-semibold text-zinc-400">
@@ -84,7 +83,7 @@ export default function Timeline() {
                   </h3>
 
                   {/* Subtitle (Smaller Heist-styled text) */}
-                  <div className="font-['Bebas_Neue'] text-sm tracking-widest text-[#e50914] mb-3 uppercase">
+                  <div className="font-['Bebas_Neue'] text-sm tracking-widest text-[#e32636] mb-3 uppercase">
                     {item.subtitle}
                   </div>
 
@@ -100,9 +99,9 @@ export default function Timeline() {
 
         {/* Footer Accent Line */}
         <div className="w-full max-w-4xl flex items-center justify-center gap-6 mt-12 text-xs tracking-[3px] text-zinc-300 uppercase font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-          <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#e50914]/60 to-transparent" />
+          <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#e32636]/60 to-transparent" />
           <span className="font-['Bebas_Neue'] text-lg tracking-widest">WOLF OF DALAL STREET</span>
-          <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#e50914]/60 to-transparent" />
+          <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#e32636]/60 to-transparent" />
         </div>
       </div>
     </section>

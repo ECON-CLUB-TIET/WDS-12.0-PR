@@ -52,7 +52,7 @@
 ========================= */
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 
@@ -182,7 +182,7 @@
     flex-direction: column;
     align-items: center;
 
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-display);
     font-size: clamp(40px, 5vw, 68px);
     font-weight: 800;
 
@@ -197,7 +197,7 @@
 .title-red {
     color: #e32636;
    
-    text-shadow: 0 0 18px rgba(229, 9, 20, 0.85);
+    text-shadow: 0 0 18px rgba(227, 38, 54, 0.85);
 }
 
 /* =========================
@@ -475,3 +475,10 @@
         padding-right: 12px;
     }
 }
+
+
+/* Header stays visible and blends into every section */
+.header { transition: background 0.3s ease, backdrop-filter 0.3s ease; }
+.header.scrolled { background: rgba(7, 6, 6, 0.82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.nav-links a { font-family: var(--font-body); letter-spacing: 1.5px; }
+.nav-links a:focus-visible { outline: 2px solid var(--wds-red); outline-offset: 4px; }

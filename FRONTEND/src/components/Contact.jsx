@@ -1,4 +1,4 @@
-import "./Contact.css";
+import "./contact.css";
 import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa";
 function Contact() {
   const contacts = [
@@ -29,11 +29,11 @@ function Contact() {
   ];
 
   return (
-    <div className="page">
+    <div className="contact-page" id="contact">
 
       <main className="contact-section">
-        <div className="heading">
-          <p className="tagline">LET'S CONNECT</p>
+        <div className="contact-heading">
+          <p className="contact-tagline">LET'S CONNECT</p>
           <h1>Get In Touch</h1>
           <p>
             Have questions, ideas or want to collaborate? We'd love to hear from
@@ -54,21 +54,21 @@ function Contact() {
               className="contact-card"
               key={contact.title}
             >
-              <div className="icon">{contact.icon}</div>
+              <div className="contact-icon">{contact.icon}</div>
               <h3>{contact.title}</h3>
               <p>{contact.detail}</p>
-              <span className="arrow">↗</span>
+              <span className="contact-arrow">↗</span>
             </a>
           ))}
         </div>
 
-        <div className="bottom-text">
+        <div className="contact-bottom">
           <h2>Stay Connected.</h2>
           <p>Follow our journey and be a part of our community.</p>
         </div>
       </main>
 
-      <footer>© 2026 econ club. All rights reserved.</footer>
+      <footer>© 2026 ECON Club. All rights reserved.</footer>
     </div>
   );
 }

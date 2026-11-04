@@ -22,11 +22,11 @@ function Hero() {
 
                 <div className="hero-buttons">
 
-                    <a href="#register" className="register-btn">
+                    <a href="#/register" className="register-btn">
                         REGISTER NOW
                     </a>
 
-                    <a href="#about" className="explore-btn">
+                    <a href="#event" className="explore-btn">
                         EXPLORE EVENT
                     </a>
 
