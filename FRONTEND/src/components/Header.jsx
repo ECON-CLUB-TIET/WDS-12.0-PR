@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import wdsLogo from "../assets/wdslogo.png";
+import econLogo from "../assets/Econ(White).png";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +20,15 @@ function Header() {
     return (
         <header className={`header ${scrolled || menuOpen ? "scrolled" : ""}`}>
 
-            <a href="#" className="logo" onClick={closeMenu}>
-                <img src={wdsLogo} alt="Wolf of Dalal Street Logo" />
-            </a>
+            <div className="logo-group">
+                <a href="#" className="logo logo-econ" onClick={closeMenu}>
+                    <img src={econLogo} alt="ECON Club Logo" />
+                </a>
+                <span className="logo-divider" aria-hidden="true" />
+                <a href="#" className="logo" onClick={closeMenu}>
+                    <img src={wdsLogo} alt="Wolf of Dalal Street Logo" />
+                </a>
+            </div>
 
             <button
                 className={`hamburger ${menuOpen ? "open" : ""}`}

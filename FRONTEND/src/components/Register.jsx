@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Register.css";
 import wdsLogo from "../assets/wdslogo.png";
+import econLogo from "../assets/Econ(White).png";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -109,9 +110,15 @@ export default function Register() {
   return (
     <div className="reg-page">
       <header className="reg-top">
-        <a href="#" className="reg-logo" aria-label="Back to home">
-          <img src={wdsLogo} alt="Wolf of Dalal Street" />
-        </a>
+        <div className="logo-group">
+          <a href="#" className="logo logo-econ" aria-label="Back to home">
+            <img src={econLogo} alt="ECON Club Logo" />
+          </a>
+          <span className="logo-divider" aria-hidden="true" />
+          <a href="#" className="logo" aria-label="Back to home">
+            <img src={wdsLogo} alt="Wolf of Dalal Street" />
+          </a>
+        </div>
         <a href="#" className="reg-back">← BACK TO SITE</a>
       </header>
 
