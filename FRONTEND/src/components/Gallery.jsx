@@ -3,40 +3,32 @@ import "../Gallery.css";
 
 // Replace these image URLs with your event photographs whenever they are ready.
 const galleryPhotos = [
-    {
-        src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85",
-        alt: "Modern financial district skyscrapers",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85",
-        alt: "City skyline glowing at night",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
-        alt: "Professional in a suit",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85",
-        alt: "Financial charts on a computer screen",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85",
-        alt: "Team collaborating around a table",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85",
-        alt: "Contemporary workspace",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
-        alt: "People working together on a laptop",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=85",
-        alt: "Team meeting in a bright room",
-    },
+  "/components/gallery/IMG_0015.JPG",
+//   "/gallery/IMG_0016.JPG",
+//   "/gallery/IMG_0017.JPG",
+//   "/gallery/IMG_0018.JPG",
+//   "/gallery/IMG_0019.JPG",
+//   "/gallery/IMG_0021.JPG",
+//   "/gallery/IMG_0022.jpeg",
+//   "/gallery/IMG_0023.jpeg",
+//   "/gallery/IMG_0024.jpeg",
+//   "/gallery/IMG_0025.jpeg",
+//   "/gallery/IMG_0026.jpeg",
+//   "/gallery/IMG_0027.jpeg",
+//   "/gallery/IMG_0028.jpeg",
+//   "/gallery/IMG_0029.jpeg",
+//   "/gallery/IMG_0030.jpeg",
+//   "/gallery/IMG_0031.jpeg",
+//   "/gallery/IMG_0032.jpeg",
+//   "/gallery/IMG_0033.jpeg",
+//   "/gallery/IMG_0034.jpeg",
+//   "/gallery/IMG_0035.jpeg",
+//   "/gallery/IMG_0036.jpeg",
+//   "/gallery/IMG_0037.jpeg",
+//   "/gallery/IMG_0038.jpeg",
+//   "/gallery/IMG_0039.jpeg",
+//   "/gallery/IMG_0040.jpeg",
 ];
-
 function Gallery() {
     const [activePhoto, setActivePhoto] = useState(null);
 
