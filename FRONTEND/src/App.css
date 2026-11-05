@@ -355,6 +355,11 @@
         display: block;
         z-index: 12;
     }
+    .title-red {
+    color: #e32636;
+   
+    text-shadow: 0 0 12x rgba(227, 38, 54, 0.85);
+    }
 
     /* Mobile navigation */
 
@@ -396,15 +401,16 @@
 
     .hero {
         background-image:url("./assets/mobile-bg.png");
-
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
-
+    .hero-overlay {
+    display: none !important;
+}
 
     .hero-content {
-        padding: 90px 18px 125px;
+        padding: 98px 18px 117px;
     }
 
     /* Event label */
@@ -424,7 +430,7 @@
     /* Title */
 
     .hero h1 {
-        font-size: clamp(36px, 9vw, 55px);
+        font-size: clamp(38px, 9vw, 75px);
         line-height: 1.12;
         letter-spacing: 0;
     }
