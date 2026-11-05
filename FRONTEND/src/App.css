@@ -430,7 +430,7 @@
     /* Title */
 
     .hero h1 {
-        font-size: clamp(38px, 9vw, 75px);
+        font-size: clamp(45px, 10vw, 85px);
         line-height: 1.12;
         letter-spacing: 0;
     }
@@ -450,7 +450,7 @@
     }
 
     .hero-buttons a {
-        width: 195px;
+        width: 155px;
         text-align: center;
 
         padding: 13px 15px;
