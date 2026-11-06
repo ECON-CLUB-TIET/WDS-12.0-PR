@@ -53,7 +53,7 @@ function Contact() {
             <a
               key={c.title}
               href={c.link}
-              target={c.external ? "_blank" : undefined}
+              target={c.external ? "_self" : undefined}
               rel={c.external ? "noopener noreferrer" : undefined}
               className="contact-card"
             >
