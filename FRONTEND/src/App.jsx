@@ -7,7 +7,7 @@ import Hero from "./components/Hero";
 import Timeline from './components/Timeline';
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
-import Register from "./components/Register";
+// import Register from "./components/Register";
 
 const isRegisterRoute = () => window.location.hash === "#/register";
 

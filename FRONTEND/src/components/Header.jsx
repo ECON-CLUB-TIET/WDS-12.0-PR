@@ -43,7 +43,13 @@ function Header() {
 
             <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
                 <a href="#" onClick={closeMenu}>HOME</a>
-                <a href="#/register" onClick={closeMenu}>REGISTER</a>
+                <a
+                href="https://www.saturnalia.in/events/business"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu} > 
+                REGISTER
+                </a>
                 <a href="#event" onClick={closeMenu}>ABOUT</a>
                 <a href="#timeline" onClick={closeMenu}>TIMELINE</a>
                 <a href="#gallery" onClick={closeMenu}>GALLERY</a>
