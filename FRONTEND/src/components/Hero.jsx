@@ -22,7 +22,7 @@ function Hero() {
 
                 <div className="hero-buttons">
 
-                    <a href="#/register" className="register-btn">
+                    <a href="https://www.saturnalia.in/events/business" className="register-btn">
                         REGISTER NOW
                     </a>
 
