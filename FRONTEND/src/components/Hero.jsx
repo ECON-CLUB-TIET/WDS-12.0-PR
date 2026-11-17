@@ -31,6 +31,30 @@ function Hero() {
                     </a>
 
                 </div>
+                <div className="event-details">
+
+                    <div className="detail-item">
+                        <span className="detail-label">VENUE</span>
+                        <span className="detail-value">LT 101</span>
+                    </div>
+
+                    <div className="detail-divider"></div>
+
+                    <div className="detail-item">
+                        <span className="detail-label">DATE</span>
+                        <span className="detail-value">22 NOV 2026</span>
+                    </div>
+
+                    <div className="detail-divider"></div>
+
+                    <div className="detail-item">
+                        <span className="detail-label">TIME</span>
+                        <span className="detail-value">10:00 AM</span>
+                    </div>
+                    <div className="detail-divider"></div>
+
+
+                </div>
 
             </div>
 
