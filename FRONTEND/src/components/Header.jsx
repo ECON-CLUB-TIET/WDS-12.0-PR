@@ -45,7 +45,7 @@ function Header() {
                 <a href="#" onClick={closeMenu}>HOME</a>
                 <a
                 href="https://www.saturnalia.in/events/business"
-                target="_blank"
+                target="_self"
                 rel="noopener noreferrer"
                 onClick={closeMenu} > 
                 REGISTER
